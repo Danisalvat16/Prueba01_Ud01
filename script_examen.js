@@ -23,15 +23,15 @@ function gestion_compras(){
     let max=0;
     let min= Infinity;
     do{
-        let precio;
-        let cant;
+        let precio=0;
+        let cant=0;
         operaciones+=1;
         //Validaciones
         do{
-            precio = parseInt(prompt("Introduzca el precio del producto:"));
+            precio = parseFloat(prompt("Introduzca el precio del producto:"));
         }while(precio<0 && isNaN(precio))
         do{
-            cant = parseInt(prompt("Introduzca las unidades del producto:"));
+            cant = parseFloat(prompt("Introduzca las unidades del producto:"));
         }while(cant<0 && isNaN(cant))
         let importe = precio*cant;
 
@@ -47,7 +47,7 @@ function gestion_compras(){
     }while((window.confirm("¿Desea realizar otra operación?")))
     //Mensaje con datos finales
     let medio=total/operaciones;
-    console.log(`Operaciones: ${operaciones}\nGasto total: ${total.toFixed(2)}€\nGasto medio ${medio.toFixed(2)}€
+    console.log(`Operaciones: ${parseInt(operaciones)}\nGasto total: ${total.toFixed(2)}€\nGasto medio ${medio.toFixed(2)}€
         \nGasto min ${min.toFixed(2)}€\nGasto max ${max.toFixed(2)}€`)
 }
 gestion_compras();
