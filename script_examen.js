@@ -31,7 +31,7 @@ function gestion_compras(){
             precio = parseFloat(prompt("Introduzca el precio del producto:"));
         }while(precio<0 && isNaN(precio))
         do{
-            cant = parseFloat(prompt("Introduzca las unidades del producto:"));
+            cant = parseInt(prompt("Introduzca las unidades del producto:"));
         }while(cant<0 && isNaN(cant))
         let importe = precio*cant;
 
